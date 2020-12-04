@@ -45,7 +45,14 @@ class createExercise extends Component {
     };
     console.log(exercise);
 
-    this.props.history.push("/");
+    this.props.history.replace("/");
+  }
+
+  componentDidMount(){
+    this.setState({ 
+      users: ['test user'],
+      username: 'test user'
+    });
   }
 
   render() {
@@ -53,12 +60,12 @@ class createExercise extends Component {
       <>
         <div className={classes.Container}>
           <h3 className={classes.Title}>Create exercise</h3>
-          <form onSubmit={this.onSubmit}>
+          <form onSubmit={(e) => this.onSubmit(e)}>
             <div className={classes.FormElement}>
               <label>Username:</label>
               <select
                 className={classes.InputElement}
-                ref="userInput"
+                
                 required
                 value={this.state.username}
                 onChange={(e) => this.onChangeUsername(e)}

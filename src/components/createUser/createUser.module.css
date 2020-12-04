@@ -1,3 +1,4 @@
+
 .FormElement{
     display: block;
 }
@@ -36,7 +37,7 @@
 }
 
 .InputElement:focus{
-    border: 2px solid  rgb(163, 93, 43);
+    border: 2px solid rgb(163, 93, 43);
 }
 
 .Button{
