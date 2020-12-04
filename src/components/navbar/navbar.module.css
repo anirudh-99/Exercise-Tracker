@@ -1,0 +1,37 @@
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: rgb(95,95,95);
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+.Navbar a{
+    text-decoration: none;
+    color: white;
+}
+
+.Navbar a:active,a.active,a:hover {
+    color: orange;
+}
+
+.Navbar ul{
+    list-style-type: none;
+}
+
+.Navbar li{
+    display: inline;
+    padding: 0px 10px;
+    margin-top: 20px;
+}
+
+.Navbar .logo{
+    margin-left: 20px;
+}
+
+
+

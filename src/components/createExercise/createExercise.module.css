@@ -1,0 +1,60 @@
+.FormElement{
+    display: block;
+}
+
+.Title{
+  color: black;
+  border-bottom: 3px solid saddlebrown;
+}
+
+.Container label{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.Container{
+    margin: 50px auto;
+    width: 40%;
+    
+    box-shadow: 0 2px 3px #ccc;
+    border: 1px solid #eee;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.InputElement{
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: white;
+    font: inherit;
+    padding: 6px 10px;
+    margin: 3px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.InputElement:focus{
+    border: 2px solid salmon;
+}
+
+.Button{
+  background-color: saddlebrown;
+  border: none;
+  color: white;
+  font-size: 12px;
+  border-radius: 10px;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.Button:active,.Button:hover{
+    outline:none;
+    background-color: rgb(153, 83, 33);
+}
