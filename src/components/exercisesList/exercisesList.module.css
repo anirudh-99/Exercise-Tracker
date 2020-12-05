@@ -1,0 +1,25 @@
+.TotalList{
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    
+}
+
+.Table{
+    
+    border-collapse: collapse;
+    
+}
+
+.Table th {
+    border: 1px solid black;
+    padding: 8px 3px;   
+    text-align: center; 
+    background-color: #359e89;
+}
+
+.Title{
+    border-bottom: 2px solid #0f8d74;
+}

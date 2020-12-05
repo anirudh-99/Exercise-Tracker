@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import axios from "axios";
 
-import classes from "./createExercise.module.css";
+import classes from "../createExercise/createExercise.module.css";
 import "react-datepicker/dist/react-datepicker.css";
 
-class createExercise extends Component {
+class EditExercise extends Component {
   constructor(props) {
     super(props);
 
@@ -37,35 +37,55 @@ class createExercise extends Component {
   onSubmit(e) {
     e.preventDefault();
 
+    //save the data inside the state in an object
     const exercise = {
       username: this.state.username,
       description: this.state.description,
       duration: this.state.duration,
       date: this.state.date,
     };
+
+    // patch the data entered in the backend database
     axios
-      .post("http://localhost:3001/exercises", exercise)
+      .patch(
+        `http://localhost:3001/exercises/${this.props.match.params.id}`,
+        exercise
+      )
       .then((res) => console.log(res));
 
-    this.props.history.replace("/");
+    this.props.history.push('/');
   }
 
   componentDidMount() {
+    //grab the exercise log from api by get request
+    axios
+      .get("http://localhost:3001/exercises/" + this.props.match.params.id)
+      .then((res) => {
+        this.setState({
+          username: res.data.data.username,
+          description: res.data.data.description,
+          duration: res.data.data.duration,
+          date: new Date(res.data.data.date),
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
     //grab the users from the backend api and update state
     axios
       .get("http://localhost:3001/users")
       .then((res) => {
-        if(res.data.data.length > 0) {
+        if (res.data.data.length > 0) {
           this.setState({
-            users: res.data.data.map(user => user.username),
-            username: res.data.data[0].username
+            users: res.data.data.map((user) => user.username),
+            username: res.data.data[0].username,
           });
         }
       })
       .catch((err) => {
         console.log(err);
       });
-
   }
 
   render() {
@@ -123,7 +143,7 @@ class createExercise extends Component {
             <div>
               <input
                 type="submit"
-                value="Create Exercise log"
+                value="Edit Exercise log"
                 className={classes.Button}
               />
             </div>
@@ -134,4 +154,4 @@ class createExercise extends Component {
   }
 }
 
-export default createExercise;
+export default EditExercise;

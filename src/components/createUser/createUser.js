@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import classes from "./createUser.module.css";
+import axios from "axios";
 
 const CreateUser = () => {
   const [username, setUsername] = useState("");
@@ -7,7 +8,10 @@ const CreateUser = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     const newUser = { username: username };
-    console.log(newUser);
+    //sending data to backend
+    axios
+      .post("http://localhost:3001/users", newUser)
+      .then((res) => console.log(res.data));
     setUsername("");
   };
 

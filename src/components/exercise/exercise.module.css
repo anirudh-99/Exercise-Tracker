@@ -1,0 +1,21 @@
+.TableRow tr{
+    background-color: #f2f2f2;
+
+}
+
+.TableRow td{
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.Button{
+    background-color: rgb(95,95,95);
+    color: white;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.Button a{
+    color: white;
+    text-decoration: none;
+}

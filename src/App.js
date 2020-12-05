@@ -2,10 +2,10 @@ import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import Navbar from './components/navbar/navbar';
-import EditExercise from './components/editExercise';
+import EditExercise from './components/editExercise/editExercise';
 import CreateExercise from './components/createExercise/createExercise';
 import CreateUser from './components/createUser/createUser';
-import ExercisesList from './components/exercisesList';
+import ExercisesList from './components/exercisesList/exercisesList';
 
 function App() {
   return (
